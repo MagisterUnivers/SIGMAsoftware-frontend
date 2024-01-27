@@ -1,3 +1,3 @@
-export function UserCard () {
+export function UserCard ({ data }) {
   return
 }

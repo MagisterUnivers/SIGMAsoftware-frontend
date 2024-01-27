@@ -1,8 +1,8 @@
 import { Route, Routes } from 'react-router-dom';
 import { Layout } from './components';
 import Redirect from './components/Redirect/Redirect';
-import ContactsList from './pages/ContactsList/ContactsList';
 import HomePage from './pages/HomePage/HomePage';
+import ContactsPage from './pages/ContactsPage/ContactsPage';
 
 export default function App () {
   return (
@@ -12,7 +12,7 @@ export default function App () {
         <Route path="/contacts" element={<Layout />}>
           <Route
             path="list"
-            element={<ContactsList />}
+            element={<ContactsPage />}
           />
           <Route
             path="home"

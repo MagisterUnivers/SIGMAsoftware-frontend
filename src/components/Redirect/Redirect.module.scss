@@ -12,9 +12,9 @@
     gap: 30px;
 
     &-link {
+      color: $main-white-color;
       font-size: 20px;
       transition: color 150ms ease-out, transform 200ms ease-out, text-decoration 200ms ease-out;
-      color: $main-black-color;
 
       &:hover {
         color: $main-red-color;

@@ -11,7 +11,7 @@ export default function Header () {
       <div className={styles.header__container}>
         <div className={styles['header__logo-container']}>
           <assets.HomeSVG width={20} height={20} />
-          <Link to="/">Friend list Manager</Link>
+          <Link to="/" title='Back to welcome page'>Friend list Manager</Link>
         </div>
         <ul className={styles.header__list}>
           <li className="nav-item">
