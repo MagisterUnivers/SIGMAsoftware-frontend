@@ -2,6 +2,12 @@ import React from 'react';
 
 export default function ContactsList () {
   return (
-    <h1>Contact list Page</h1>
+    <section>
+      <div>
+        <ul>
+          <li>Hello</li>
+        </ul>
+      </div>
+    </section>
   );
 };

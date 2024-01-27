@@ -1,46 +1,32 @@
 import { Link, useLocation } from 'react-router-dom';
+import { Button } from '../../components';
+import { assets } from '../../assets/index'
+import styles from './Header.module.scss'
 
 export default function Header () {
-  const location = useLocation();
+  const location = useLocation()
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-      {/* <div className="container">
-        <Link to="/" className="navbar-brand logo">
-          Task Manager
-        </Link>
-        <div
-          className="collapse navbar-collapse"
-          id="navbarNav"
-          style={{ justifyContent: 'center' }}
-        >
-          <ul
-            className="navbar-nav ml-auto"
-            style={{ alignItems: 'center', fontSize: '20px' }}
-          >
-            <li className="nav-item">
-              <Link to="/main/home" className="nav-link link-hover">
-                Home
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/main/tasks" className="nav-link link-hover">
-                Tasks
-              </Link>
-            </li>
-            {location.pathname === '/main/tasks' && (
-              <li>
-                <Button
-                  text="Add task"
-                  onClick={() => {
-                    dispatch(openModal());
-                  }}
-                />
-              </li>
-            )}
-          </ul>
+    <nav className={styles.header}>
+      <div className={styles.header__container}>
+        <div className={styles['header__logo-container']}>
+          <assets.HomeSVG width={20} height={20} />
+          <Link to="/">Friend list Manager</Link>
         </div>
-      </div> */}
+        <ul className={styles.header__list}>
+          <li className="nav-item">
+            <Link to="/contacts/home">Home</Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/contacts/list">Contacts</Link>
+          </li>
+          {location.pathname === '/contacts/list' && (
+            <li>
+              <Button onClick={() => { }}>Create new contact</Button>
+            </li>
+          )}
+        </ul>
+      </div>
     </nav>
-  );
-};
+  )
+}

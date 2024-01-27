@@ -1,0 +1,45 @@
+@import '../variables.module';
+
+.header {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 30px;
+  background-color: $main-black-color;
+
+  & a,
+  button {
+    font-size: 15px;
+    color: $main-white-color;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  & svg {
+    fill: $main-white-color;
+  }
+
+  &__logo-container {
+    display: flex;
+    gap: 10px;
+
+    & a {
+      color: red;
+    }
+  }
+
+  &__container {
+    display: flex;
+    gap: 30px;
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  &__list {
+    display: flex;
+    gap: 30px;
+  }
+}
