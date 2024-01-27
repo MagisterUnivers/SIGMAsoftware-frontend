@@ -6,14 +6,31 @@ export default function ContactsPage () {
   const [usersData, setUsersData] = useState()
 
   useEffect(() => {
-    setUsersData(fetchAPI('/', 'GET', null))
+    async function fetchData () {
+      const data = await fetchAPI({
+        resource: '/',
+        method: 'GET',
+        fields: null
+      });
+      setUsersData(data)
+    }
+
+    fetchData()
   }, [])
+
+  useEffect(() => {
+    console.log(usersData)
+  }, [usersData])
 
   return (
     <section>
       <div>
         <ul>
-          <li>Hello</li>
+          {usersData?.map((item => {
+            return (
+              <li>Hello</li>
+            )
+          }))}
         </ul>
       </div>
     </section>

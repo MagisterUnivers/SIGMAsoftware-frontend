@@ -1,20 +1,18 @@
-export async function fetchAPI ({
-  resource = process.env.REACT_APP_API_ENDPOINT,
-  method,
-  fields
-}) {
+export async function fetchAPI ({ resource, method, fields }) {
+  const validatedFields = fields !== null 
+    ? { body : JSON.stringify(fields) }
+    : {}
   const options = {
-    method: 'GET',
-    mode: 'no-cors',
+    method,
     headers: {
       Accept: 'application/json, text/plain, */*',
       'User-Agent': '*'
     },
-    body: JSON.stringify(fields)
+   validatedFields
   }
 
   try {
-    const res = await fetch(resource, options)
+    const res = await fetch(`${process.env.REACT_APP_API_ENDPOINT}${resource}`, options)
 
     if (!res.ok) {
       const errorData = await res.json()
