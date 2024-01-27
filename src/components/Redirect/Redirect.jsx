@@ -1,16 +1,17 @@
 import { Link } from 'react-router-dom';
+import styles from './Redirect.module.scss'
 
 export default function Redirect () {
   return (
-    <div className="d-flex justify-content-center align-items-center vh-100">
-      <div className="text-center">
-        <Link to="/main/home" className="btn btn-primary mx-2">
+    <section className={styles.redirect}>
+      <div className={styles.redirect__wrapper}>
+        <Link to="/contacts/home" className={styles['redirect__wrapper-link']}>
           Go to Home
         </Link>
-        <Link to="/main/tasks" className="btn btn-secondary mx-2">
+        <Link to="/contacts/list" className={styles['redirect__wrapper-link']}>
           Go to Tasks
         </Link>
       </div>
-    </div>
-  );
-};
+    </section>
+  )
+}
