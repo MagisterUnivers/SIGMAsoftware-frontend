@@ -1,1 +1,5 @@
 export * from './fetch-api'
+export * from './UserCRUD/delete'
+export * from './UserCRUD/create'
+export * from './UserCRUD/update'
+export * from './UserCRUD/read'

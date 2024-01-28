@@ -1,9 +1,16 @@
+import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
-import { fetchAPI } from '../../api/fetch-api'
+import { UserCard } from '../../components'
+import { fetchAPI } from '../../api'
 import styles from './ContactsPage.module.scss'
 
 export default function ContactsPage () {
   const [usersData, setUsersData] = useState()
+  const [isDeleted, setIsDeleted] = useState(false)
+
+  function handleDelete () {
+    setIsDeleted(!isDeleted)
+  }
 
   useEffect(() => {
     async function fetchData () {
@@ -16,19 +23,19 @@ export default function ContactsPage () {
     }
 
     fetchData()
-  }, [])
-
-  useEffect(() => {
-    console.log(usersData)
-  }, [usersData])
+  }, [isDeleted])
 
   return (
     <section>
       <div>
-        <ul>
+        <ul className={styles.contacts__list}>
           {usersData?.map((item => {
             return (
-              <li>Hello</li>
+              <li key={item.id}>
+                <Link to={`/contacts/${item.id}`} className={styles['contacts__label-link']}>
+                  <UserCard data={item} isDeleted={handleDelete} deletedState={isDeleted} />
+                </Link>
+              </li>
             )
           }))}
         </ul>

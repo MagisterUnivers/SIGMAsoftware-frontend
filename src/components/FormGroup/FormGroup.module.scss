@@ -1,0 +1,19 @@
+@import '../variables.module';
+
+.form-group {
+  &__label {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    width: 100%;
+
+    & p span {
+      color: $main-red-color;
+    }
+
+    & input,
+    textarea {
+      padding: 10px;
+    }
+  }
+}

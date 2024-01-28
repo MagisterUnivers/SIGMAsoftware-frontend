@@ -1,0 +1,35 @@
+@import '../../variables.module';
+
+.user-card {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    & div:first-of-type {
+      display: flex;
+      gap: 5px;
+      align-items: center;
+
+      & svg {
+        fill: $main-white-color;
+      }
+    }
+  }
+
+  &__service-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 10px;
+    gap: 10px;
+
+    & button {
+      padding: 5px;
+
+      & svg {
+        fill: $main-white-color;
+      }
+    }
+  }
+}

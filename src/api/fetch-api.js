@@ -8,7 +8,7 @@ export async function fetchAPI ({ resource, method, fields }) {
       Accept: 'application/json, text/plain, */*',
       'User-Agent': '*'
     },
-   validatedFields
+   ...validatedFields
   }
 
   try {

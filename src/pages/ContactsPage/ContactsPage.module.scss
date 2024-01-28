@@ -1,0 +1,19 @@
+@import '../../components/variables.module';
+
+.contacts {
+  &__list {
+    display: flex;
+    gap: 30px;
+    padding: 20px;
+    width: 100%;
+  }
+
+  &__label-link {
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+    padding: 10px;
+    border: 1px solid $main-white-color;
+    border-radius: 8px;
+  }
+}

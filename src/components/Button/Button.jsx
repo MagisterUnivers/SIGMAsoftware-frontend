@@ -1,7 +1,3 @@
-export function Button ({
-  children,
-  type,
-  ...props
-}) {
+export function Button ({ children, type, ...props }) {
   return <button type={type} {...props}>{children}</button>
 }

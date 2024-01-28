@@ -1,6 +1,5 @@
-import { Link, useLocation } from 'react-router-dom';
-import { Button } from '../../components';
-import { assets } from '../../assets/index'
+import { Link, useLocation } from 'react-router-dom'
+import { assets } from '../../assets'
 import styles from './Header.module.scss'
 
 export default function Header () {
@@ -22,7 +21,7 @@ export default function Header () {
           </li>
           {location.pathname === '/contacts/list' && (
             <li>
-              <Button onClick={() => { }}>Create new contact</Button>
+              <Link to="/contacts/create">Create contact</Link>
             </li>
           )}
         </ul>
